@@ -27,5 +27,5 @@ If you installed everything you just need to do:
 
 
 ## TODO
-- Write a launch file to launch the camera and start recording (record only useful topics)
+- Allow to choose the bag name
 - Write the script to extract RGB and DEPTH
