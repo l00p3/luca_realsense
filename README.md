@@ -11,8 +11,21 @@ sudo apt-get install librealsense2-utils
 Be sure that the ros2 wrapper is installed (here we will refere always to ROS2 Humble):
 
 sudo apt install ros-humble-librealsense2*
+sudo apt install ros-humble-realsense2-camera
 
 (please refer to: https://github.com/IntelRealSense/realsense-ros (ros2-development branch))
 
+Be sure to calibrate your camera and save the parameters on-board (using realsense-viewer)
+
 
 ## How to use me
+If you installed everything you just need to do:
+
+```
+./launch.sh
+```
+
+
+## TODO
+- Write a launch file to launch the camera and start recording (record only useful topics)
+- Write the script to extract RGB and DEPTH

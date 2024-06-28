@@ -1,0 +1,12 @@
+enable_color: true
+enable_depth: true
+align_depth.enable: true
+rgb_camera.color_profile: 640x480x30
+depth_module.depth_profile: 640x480x30
+depth_module.exposure: 8500
+depth_module.gain: 16
+depth_module.hdr_enabled: false
+decimation_filter.enable: true
+spatial_filter.enable: true
+temporal_filter.enable: true
+hdr_merge.enable: true
