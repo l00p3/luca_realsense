@@ -46,5 +46,14 @@ def generate_launch_description():
                 ],
                 shell=True,
             ),
+            ExecuteProcess(
+                cmd=[
+                    "ros2",
+                    "run",
+                    "rqt_image_view",
+                    "rqt_image_view",
+                    "/camera/camera/color/image_raw",
+                ],
+            ),
         ],
     )
