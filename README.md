@@ -40,7 +40,3 @@ Then, you can use this command to extract the images:
 ```
 python3 extract_images.py /path/of/the/bag/folder/ /path/where/you/want/your/images/
 ```
-
-
-## TODO
-- launch also rviz with the launch file
