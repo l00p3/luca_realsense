@@ -1,4 +1,6 @@
-# This is a repo to facilitate the use of RealSense cameras everywhere in the world
+# This is a repo to facilitate the use of Intel RealSense D400 Series cameras everywhere in the world
+
+This repo is tested only on Intel RealSense D455 camera and Ubutnu 22.04.
 
 ## Before to Start
 Be sure that Intel RealSense SDK 2.0 is installed:
@@ -24,6 +26,12 @@ In the latter case you will not have useful information in the camera_info topic
 
 If you want to use ROS2 camera calib refer to this link:
 https://docs.nav2.org/tutorials/docs/camera_calibration.html
+
+It is preferable to use the Intel RealSense D400 Series Dynamic Calibration Tool:
+https://www.intel.com/content/www/us/en/download/645988/intel-realsense-d400-series-dynamic-calibration-tool.html
+
+On Ubuntu you need to install the software following the instruction in the link above and then run the executable "Inter.RealSense.DynamicCalibrator" installed at "/usr/bin/".
+
 
 
 ## How to use me
