@@ -22,10 +22,11 @@ Be sure to calibrate your camera and save the parameters on-board (using realsen
 If you installed everything you just need to do:
 
 ```
-./launch.sh
+ros2 launch launch/record_bag.launch.py
 ```
 
 
 ## TODO
 - Allow to choose the bag name
+- launch also rviz with the launch file
 - Write the script to extract RGB and DEPTH

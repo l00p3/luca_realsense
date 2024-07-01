@@ -1,13 +1,21 @@
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, ExecuteProcess
+from launch.actions import (
+    IncludeLaunchDescription,
+    ExecuteProcess,
+    DeclareLaunchArgument,
+)
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import PathJoinSubstitution
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
+    output_folder = LaunchConfiguration("output_folder")
+    output_bag_name = DeclareLaunchArgument("output_folder", default_value="kitemurt")
+
     return LaunchDescription(
         [
+            output_bag_name,
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(
                     [
@@ -22,7 +30,6 @@ def generate_launch_description():
                 ),
                 launch_arguments={
                     "config_file": "config.yaml",
-                    "output": "screen",
                 }.items(),
             ),
             ExecuteProcess(
@@ -34,8 +41,10 @@ def generate_launch_description():
                     "/camera/camera/color/image_raw",
                     "/camera/camera/aligned_depth_to_color/camera_info",
                     "/camera/camera/aligned_depth_to_color/image_raw",
+                    "-o",
+                    output_folder,
                 ],
-                output="screen",
+                shell=True,
             ),
         ],
     )
