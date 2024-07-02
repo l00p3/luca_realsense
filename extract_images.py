@@ -36,7 +36,9 @@ def main(
                 msg = reader.deserialize(rawdata, connection.msgtype)
                 img = message_to_cvimage(msg, "bgr8")
                 img_filename = (
-                    str(msg.header.stamp.sec) + str(msg.header.stamp.nanosec) + ".png"
+                    str(msg.header.stamp.sec)
+                    + str(msg.header.stamp.nanosec).zfill(9)
+                    + ".png"
                 )
                 cv2.imwrite(str(rgb_output_folder / img_filename), img)
                 rgb_filenames.add(img_filename)
@@ -44,7 +46,9 @@ def main(
                 msg = reader.deserialize(rawdata, connection.msgtype)
                 img = message_to_cvimage(msg, "mono16")
                 img_filename = (
-                    str(msg.header.stamp.sec) + str(msg.header.stamp.nanosec) + ".png"
+                    str(msg.header.stamp.sec)
+                    + str(msg.header.stamp.nanosec).zfill(9)
+                    + ".png"
                 )
                 cv2.imwrite(str(depth_output_folder / img_filename), img)
                 depth_filenames.add(img_filename)
