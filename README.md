@@ -66,7 +66,7 @@ https://github.com/opencv/opencv/blob/4.x/doc/pattern.png
 After the calibration the parameter will be saved into "/tmp/calibrationdata.tar.gz", extract them with:
 
 ```
-tar -xvf calibration.tar.gz
+tar -xvf calibrationdata.tar.gz
 ```
 
 ## How to use me
