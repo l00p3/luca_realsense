@@ -38,9 +38,9 @@ If you decide to use the ROS2 camera calibrator node first install it:
 
 ```
 sudo apt install ros-humble-camera-calibration
-sudo apt install ros-humble-camera-calibration-parser
+sudo apt install ros-humble-camera-calibration-parsers
 sudo apt install ros-humble-camera-info-manager
-sudo apt install ros-humble-camera-launch-testing-ament-cmake
+sudo apt install ros-humble-launch-testing-ament-cmake
 ```
 
 and build in your workspace:
