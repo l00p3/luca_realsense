@@ -21,18 +21,53 @@ sudo apt install ros-humble-realsense2-camera
 
 (please refer to: https://github.com/IntelRealSense/realsense-ros (ros2-development branch))
 
-IMPORTANT: be sure to calibrate your camera and save the parameters on-board (using realsense-viewer) or somewhere else.
+IMPORTANT: be sure to calibrate your camera and save the parameters on-board or somewhere else.
 In the latter case you will not have useful information in the camera_info topic of the recorded bag.
 
 If you want to use ROS2 camera calib refer to this link:
 https://docs.nav2.org/tutorials/docs/camera_calibration.html
+or read the next section.
 
-It is preferable to use the Intel RealSense D400 Series Dynamic Calibration Tool:
+If you want to use the software Intel RealSense D400 Series Dynamic Calibration Tool refer to this link:
 https://www.intel.com/content/www/us/en/download/645988/intel-realsense-d400-series-dynamic-calibration-tool.html
-
 On Ubuntu you need to install the software following the instruction in the link above and then run the executable "Inter.RealSense.DynamicCalibrator" installed at "/usr/bin/".
 
 
+## Calibrate with ROS2 Camera Calibrator
+If you decide to use the ROS2 camera calibrator node first install it:
+
+```
+sudo apt install ros-humble-camera-calibration
+sudo apt install ros-humble-camera-calibration-parser
+sudo apt install ros-humble-camera-info-manager
+sudo apt install ros-humble-camera-launch-testing-ament-cmake
+```
+
+and build in your workspace:
+
+```
+git clone -b humble git@github.com:ros-perception/image_pipeline.git
+```
+
+(remember to source your workspace).
+
+Then, you can use the launch file:
+
+```
+ros2 launch launch/calibrate.launch.py
+```
+
+(set the correct chessboard dimension there: #squares and squares dimension).
+We set the parameters in such a way it works with a A4 printed version of this chessboard:
+https://github.com/opencv/opencv/blob/4.x/doc/pattern.png
+
+(also the onw that you find in the IPB lab in A4 format).
+
+After the calibration the parameter will be saved into "/tmp/calibrationdata.tar.gz", extract them with:
+
+```
+tar -xvf calibration.tar.gz
+```
 
 ## How to use me
 If you installed everything you just need to start the recording with:
