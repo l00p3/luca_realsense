@@ -122,6 +122,12 @@ Now, you will see the new configuration published on the camera info topic (rgb 
 
 
 ## How to use me
+There is some dependency that you need to install in order to launch the recording:
+
+```
+pip install pyside2 pyqt5
+```
+
 If you installed everything you just need to start the recording with:
 
 ```

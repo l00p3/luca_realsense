@@ -39,7 +39,6 @@ def generate_launch_description():
                     "record",
                     "/camera/camera/color/camera_info",
                     "/camera/camera/color/image_raw",
-                    "/camera/camera/aligned_depth_to_color/camera_info",
                     "/camera/camera/aligned_depth_to_color/image_raw",
                     "-o",
                     output_folder,
