@@ -67,6 +67,11 @@ After the calibration the parameter will be saved into "/tmp/calibrationdata.tar
 tar -xvf calibrationdata.tar.gz
 ```
 
+### How to save the computed parameters on the camera
+If you want to save the computed parameters on the camera to be published on the camera info topic follow these instructions.
+
+TODO
+
 ## How to use me
 If you installed everything you just need to start the recording with:
 
