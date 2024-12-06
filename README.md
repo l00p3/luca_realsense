@@ -43,13 +43,11 @@ sudo apt install ros-humble-camera-info-manager
 sudo apt install ros-humble-launch-testing-ament-cmake
 ```
 
-and build in your workspace:
+and install image pipeline package:
 
 ```
-git clone -b humble git@github.com:ros-perception/image_pipeline.git
+sudo apt install ros-humble-image-pipeline
 ```
-
-(remember to source your workspace).
 
 Then, you can use the launch file:
 
