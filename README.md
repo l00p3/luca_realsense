@@ -70,7 +70,56 @@ tar -xvf calibrationdata.tar.gz
 ### How to save the computed parameters on the camera
 If you want to save the computed parameters on the camera to be published on the camera info topic follow these instructions.
 
-TODO
+First, get the serial number of your camera. This can be done by launching the camera node:
+
+```
+ros2 launch realsense2_camera rs_launch.py
+```
+
+and then copying the number that appears as a INFO message. For example:
+
+```
+[realsense2_camera_node-1] [INFO] [1733481265.392948901] [camera.camera]: Device Serial No: 215226255564
+```
+
+Then, copy the xml file from inside the camera by running the following command:
+
+```
+/usr/bin/Intel.Realsense.CustomRW -sn 215226255564 -r -f realsense_camera_215226255564.xml 
+```
+
+using the correct serial number. Them you can open the file ("realsense_camera_215226255564.xml" in this case) with your editor and modify the camera parameters. In particular, you want to modify these fields:
+
+```
+<param name = "ResolutionRGB">
+        <value>1280</value>
+        <value>800</value>
+    </param>
+    <param name = "FocalLengthRGB">
+        <value>641.023</value>
+        <value>640.43</value>
+    </param>
+    <param name = "PrincipalPointRGB">
+        <value>652.651</value>
+        <value>405.144</value>
+    </param>
+    <param name = "DistortionRGB">
+        <value>-0.058282</value>
+        <value>0.0700606</value>
+        <value>-0.000564562</value>
+        <value>0.000530918</value>
+        <value>-0.0231781</value>
+    </param>
+```
+
+Once this is done, you can upload the modified file onto the camera:
+
+```
+/usr/bin/Intel.Realsense.CustomRW -sn 215226255564 -w -f realsense_camera_215226255564.xml 
+```
+
+Now, you will see the new configuration published on the camera info topic (rgb topic) when you run the camera node.
+
 
 ## How to use me
 If you installed everything you just need to start the recording with:
